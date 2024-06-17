@@ -8,6 +8,12 @@ Installation
 To install the package, you can use the following command:
 
 ```bash
+pip install minimal_molview
+```
+
+For a developer install use the following
+
+```bash
 git clone https://github.com/hmacdope/minimal_molview
 pip install -e .
 ```
