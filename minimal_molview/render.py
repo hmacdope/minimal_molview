@@ -1,5 +1,7 @@
 import argparse
 from jinja2 import Template
+from pathlib import Path
+
 from minimal_molview.templates.resources import HTML_TEMPLATE
 
 def render(pdb_file, output_file):
@@ -15,6 +17,10 @@ def render(pdb_file, output_file):
     template_str = open(HTML_TEMPLATE).read()
     template = Template(template_str)
     
+    if output_file is None:
+        # take stem of pdb_file and append .html
+        output_file = Path(pdb_file).stem + ".html"
+        
     with open(output_file, "wt") as fout:
         fout.write(template.render(data))
     
@@ -23,7 +29,7 @@ def render(pdb_file, output_file):
 def main():
     parser = argparse.ArgumentParser(description="Render PDB file into HTML using Jinja2 template.")
     parser.add_argument("pdb_file", type=str, help="Input PDB file")
-    parser.add_argument("-o", "--output", type=str, default="render.html",
+    parser.add_argument("-o", "--output", type=str, default=None,
                         help="Output HTML file (default: render.html)")
     args = parser.parse_args()
     render(args.pdb_file, args.output)
