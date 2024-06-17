@@ -1,11 +1,26 @@
 minimal_molview
 ==============================
-[//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/minimal_molview/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/minimal_molview/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/minimal_molview/branch/main/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/minimal_molview/branch/main)
 
+A minimal molecular viewer for visualising molecular structures in an HTML file. 
 
-A short description of the project (less than one line).
+Installation
+------------
+To install the package, you can use the following command:
+
+```bash
+git clone https://github.com/hmacdope/minimal_molview
+pip install -e .
+```
+
+Usage
+------------
+To use the viewer, simply run the following command in the terminal:
+
+```bash
+ minimal_molview 8qa2.pdb -o 8qa2.html
+```
+
+This will generate an HTML file called `8qa2.html` which can be opened in a web browser to view the molecular structure.
 
 ### Copyright
 
